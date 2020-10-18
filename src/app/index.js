@@ -1,5 +1,3 @@
-const example = '例子';
-const wanpan = () => {
-    console.log(example);
+const exmaple = () => {
+    console.log('wanpan');
 }
-wanpan();
