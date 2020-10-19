@@ -2,7 +2,6 @@ const path = require('path')  //path是node.js自带的路径工具
 const entry = require('./entry');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
-    
     context: path.resolve(process.cwd(), "src/app"),
     entry: entry,
     watch: true,
