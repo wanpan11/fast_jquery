@@ -4,7 +4,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     context: path.resolve(process.cwd(), "src/app"),
     entry: entry,
-    // watch: true,
+    watch: true,
     plugins: [
         new ExtractTextPlugin("style.css"),
     ],
