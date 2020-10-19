@@ -1,14 +1,25 @@
 const path = require('path')  //path是node.js自带的路径工具
-const entry = require('./entry');
+const entryObj = require('./entry');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+console.log(entryObj);
+
+
+
+
+
+
 module.exports = {
     context: path.resolve(process.cwd(), "src/app"),
-    entry: entry,
+    entry: entryObj.jsObj,
     watch: true,
+    /**
+     * output webpack打包后的文件存放位置
+     */
     output: {
-        path: path.resolve(process.cwd(), "dist"),  //path.resolve(process.cwd()，) 指当前node启动目录
-        filename: "[name].js"     //输出文件name
+        publicPath: "/dist",   //加了一个publicPath，webpack-dev-server会去读取相应路径下面的文件，所以上面可以得到sale.js等文件
+        path: path.resolve(process.cwd(), "dist"),
+        filename: "[name].js"
     },
     module: {
         rules: [
@@ -53,14 +64,23 @@ module.exports = {
             title: '首页',
             template: path.resolve(
                 process.cwd(),
-                'src/base/webpack.template.html'),
+                function () {
+                    for (i in entry.html) {
+
+                    }
+                }),
             filename: 'index.html',
             chunks: ['index']  //sale.html引入的css和js文件资源
         })
     ],
+    /**
+     * devServer webpack-dev-server
+     * contentBase 指定文件
+     */
     devServer: {
-        contentBase: path.resolve(process.cwd(), "index.html"),
+        contentBase: path.resolve(process.cwd(), "dist"),
         compress: true,
-        port: 9000
+        port: 9000,
+        open: true,
     }
 }
