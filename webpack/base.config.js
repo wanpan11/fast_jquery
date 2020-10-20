@@ -7,7 +7,7 @@ module.exports = {
     context: path.resolve(process.cwd(), "src/app"),
     entry: entry.entry,
     output: {
-        publicPath: "/dist",
+        publicPath: "../",
         path: path.resolve(process.cwd(), "dist"),
         filename: "[name].js"
     },
@@ -21,27 +21,21 @@ module.exports = {
                 test: /\.css$/,
                 use: [{
                     loader: MiniCssExtractPlugin.loader,
-                    options: {
-                        publicPath: '../'
-                    }
+                    options: '../'
                 }, 'css-loader']
             },
             {
                 test: /\.scss$/,
                 use: [{
                     loader: MiniCssExtractPlugin.loader,
-                    options: {
-                        publicPath: '../'
-                    }
+                    options: '../'
                 }, 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.less/,
                 use: [{
                     loader: MiniCssExtractPlugin.loader,
-                    options: {
-                        publicPath: '../'
-                    }
+                    options: '../'
                 }, 'css-loader', 'less-loader']
             },
             {
@@ -72,9 +66,9 @@ module.exports = {
         }),
     ],
     devServer: {
-        contentBase: path.resolve(process.cwd(), "dist"),
+        contentBase: path.join(__dirname, "dist"),
         compress: true,
         port: 9000,
-        open: true,
+        open: true
     }
 }

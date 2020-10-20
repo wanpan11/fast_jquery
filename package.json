@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --config webpack/base.config.js",
+    "dev": " webpack --config webpack/base.config.js",
+    "start": " webpack-cli serve --config webpack/base.config.js --mode development",
     "prod": "echo \"hello prod\"",
     "babel": "babel src/app -d dist"
   },
@@ -13,6 +14,8 @@
   "devDependencies": {
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@webpack-cli/serve": "^1.0.1-alpha.5",
     "babel-loader": "^8.1.0",
     "css-loader": "^5.0.0",
     "file-loader": "^6.1.1",
