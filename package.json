@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": " webpack --config webpack/base.config.js",
+    "build": " webpack --config webpack/base.config.js",
     "start": " webpack-cli serve --config webpack/base.config.js --mode development",
     "prod": "echo \"hello prod\"",
     "babel": "babel src/app -d dist"
