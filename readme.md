@@ -3,8 +3,10 @@ webpack 学习
 *****
 
 ## 运行
+```shell
 debServer: npm run start
 build: npm run build
+```
 *****
 
 ## 
