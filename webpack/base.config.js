@@ -21,21 +21,18 @@ module.exports = {
                 test: /\.css$/,
                 use: [{
                     loader: MiniCssExtractPlugin.loader,
-                    options: '../'
                 }, 'css-loader']
             },
             {
                 test: /\.scss$/,
                 use: [{
                     loader: MiniCssExtractPlugin.loader,
-                    options: '../'
                 }, 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.less/,
                 use: [{
                     loader: MiniCssExtractPlugin.loader,
-                    options: '../'
                 }, 'css-loader', 'less-loader']
             },
             {
@@ -53,16 +50,22 @@ module.exports = {
         ]
     },
     plugins: [
+        new MiniCssExtractPlugin({
+            // 类似 webpackOptions.output里面的配置 可以忽略
+            filename: 'assets/[name].css',
+            chunkFilename: '[id].css',
+        }),
         new HtmlWebpackPlugin({
             title: '首页',
             template: path.resolve(process.cwd(), "src/app/view/index.html"),
             filename: "index.html",
             chunks: ["index"]
         }),
-        new MiniCssExtractPlugin({
-            // 类似 webpackOptions.output里面的配置 可以忽略
-            filename: '[name].css',
-            chunkFilename: '[id].css',
+        new HtmlWebpackPlugin({
+            title: 'demo',
+            template: path.resolve(process.cwd(), "src/app/view/demo.html"),
+            filename: "view/demo.html",
+            chunks: ["demo"]
         }),
     ],
     devServer: {
