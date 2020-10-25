@@ -3,11 +3,11 @@ const fs = require("fs");
 
 const jsHomePath = path.resolve(process.cwd(), "src/app/script")
 
-const jsfilesName = fs.readdirSync(jsHomePath)
+const jsFilesName = fs.readdirSync(jsHomePath)
 const entry = {}
-for (let i = 0; i < jsfilesName.length; i++) {
-    let key = jsfilesName[i].slice(0, jsfilesName[i].indexOf('.'))
-    entry[key] = './script/' + jsfilesName[i]
+for (let i = 0; i < jsFilesName.length; i++) {
+    let key = jsFilesName[i].slice(0, jsFilesName[i].indexOf('.'))
+    entry[key] = './script/' + jsFilesName[i]
     entry[key].toString()
 }
 console.log(entry);

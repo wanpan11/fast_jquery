@@ -1,5 +1,5 @@
 import '../style/index.css'
 
 
-let wanpan = x => console.log(x);
-wanpan('index');
+let index = x => console.log(x);
+index('index');

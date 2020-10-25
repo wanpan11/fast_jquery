@@ -1,3 +1,3 @@
 import '../style/demo.scss'
-let wanpan = x => console.log(x);
-wanpan('demo-1');
+let demo = x => console.log(x);
+demo('demo-1');
