@@ -9,5 +9,8 @@ build: npm run build
 ```
 *****
 
-## 
+## 配置文件
+```shell
 webpackConfig: base.config.js
+
+```
