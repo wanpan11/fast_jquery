@@ -2,8 +2,6 @@ const path = require('path')  //path是node.js自带的路径工具
 const { jsEntry, htmlEntry } = require('./entryFile');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-console.log('1====>>>>', jsEntry);
-console.log('2====>>>>', htmlEntry);
 
 module.exports = {
     context: path.resolve(process.cwd(), "src/app"),

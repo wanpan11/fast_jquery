@@ -1,4 +1,4 @@
-import '../style/index.css'
+import '../style/index.scss'
 
 
 let index = x => console.log(x);

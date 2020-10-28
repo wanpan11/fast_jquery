@@ -7,6 +7,12 @@ const htmlHomePath = path.resolve(process.cwd(), "src/app/view")
 const jsFilesName = fs.readdirSync(jsHomePath)
 const htmlFilesName = fs.readdirSync(htmlHomePath)
 
+/**
+ * 
+ * @description 根据传入的文件数组，转换为对象
+ * @param {*} arr 文件数组
+ * @param {*} type 文件类型
+ */
 function fileNameArr2objHandler(arr, type) {
     let entry = {}
     for (let i = 0; i < arr.length; i++) {
