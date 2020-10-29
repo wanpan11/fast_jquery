@@ -18,7 +18,7 @@ function fileNameArr2objHandler(arr, type) {
     for (let i = 0; i < arr.length; i++) {
         let key = arr[i].slice(0, arr[i].indexOf('.'))
         if (type === 'js') {
-            entry[key] = './script/' + arr[i]
+            entry[key] = './app/script/' + arr[i]
         } else {
             entry[key] = arr[i]
         }
@@ -37,7 +37,7 @@ function getHtmlConfig(name) {
     return {
         title: name,
         chunks: [name],
-        template: `./view/${name}.html`,
+        template: `./app/view/${name}.html`,
         filename: `${name}.html`,
         favicon: './public/logo.png', //该配置会在html同级目录下多出一个logo.png文件
         hash: true,

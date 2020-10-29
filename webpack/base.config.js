@@ -1,9 +1,10 @@
 const path = require('path')  //path是node.js自带的路径工具
 const { jsEntry, htmlEntry } = require('./entryFile');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+console.log(jsEntry);
+console.log(htmlEntry);
 module.exports = {
-    context: path.resolve(process.cwd(), "src/app"),
+    context: path.resolve(process.cwd(), "src"),
     entry: jsEntry,
     output: {
         path: path.resolve(process.cwd(), "dist"),

@@ -1,5 +1,6 @@
+import '../../public/initStyle.scss'
 import '../style/index.scss'
-import logoFile from '../img/hey.png'
+import logoFile from '../img/logo.png'
 
 window.onload = () => {
     var logo = document.getElementById('logo');
