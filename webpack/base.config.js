@@ -1,15 +1,13 @@
 const path = require('path')  //path是node.js自带的路径工具
 const { jsEntry, htmlEntry } = require('./entryFile');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     context: path.resolve(process.cwd(), "src/app"),
     entry: jsEntry,
     output: {
-        publicPath: "../",
         path: path.resolve(process.cwd(), "dist"),
-        filename: "[name].js"
+        filename: "js/[name].js"
     },
     module: {
         rules: [
@@ -52,7 +50,7 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             // 类似 webpackOptions.output里面的配置 可以忽略
-            filename: 'assets/[name].css',
+            filename: 'css/[name].css',
             chunkFilename: '[id].css',
         }),
         ...htmlEntry,

@@ -35,10 +35,11 @@ function fileNameArr2objHandler(arr, type) {
  */
 function getHtmlConfig(name) {
     return {
+        title: name,
         chunks: [name],
         template: `./view/${name}.html`,
         filename: `${name}.html`,
-        // favicon: './static/logo.png', //该配置回导致在html同级目录下多出一个logo.png文件
+        favicon: './public/logo.png', //该配置会在html同级目录下多出一个logo.png文件
         hash: true,
         inject: 'body',
     };
@@ -58,11 +59,10 @@ function createHtmlWebpackPlugin(entries) {
             pluginArr.push(new HtmlWebpackPlugin(configOptions));
         }
     }
-    // console.log('createHtmlWebpackPlugin===>', pluginArr);
     return pluginArr;
 }
 
-let jsEntry = fileNameArr2objHandler(jsFilesName, 'js')
-let htmlEntry = createHtmlWebpackPlugin(fileNameArr2objHandler(htmlFilesName, 'html'))
+const jsEntry = fileNameArr2objHandler(jsFilesName, 'js')
+const htmlEntry = createHtmlWebpackPlugin(fileNameArr2objHandler(htmlFilesName, 'html'))
 
 module.exports = { jsEntry, htmlEntry }
