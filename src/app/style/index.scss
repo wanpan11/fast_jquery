@@ -1,0 +1,22 @@
+$theme_color1:#0DB0FF;
+
+body {
+    font-size: 12px;
+    height: 200px;
+    width: 1000px;
+    background-image: url(../../img/hey.png);
+}
+
+#btnLineDiv {
+    a {
+        display: inline-block;
+        width: 100px;
+        font-size: 20px;
+        text-align: center;
+        color: #fff;
+        background-color: $theme_color1;
+        line-height: 48px;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+}
