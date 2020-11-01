@@ -1,0 +1,167 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #f2f2f2;
+    color: #222222;
+    user-select: none;
+}
+
+.clearfix {
+    clear: both;
+}
+
+/* 顶部标题 */
+.topNav {
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 16px 0;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+/* 音乐列表 */
+.musicList {
+    padding: 12px 12px 20px 12px;
+    margin: 0;
+}
+
+.musicList>li {
+    background: #fff;
+    padding: 24px 24px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.musicList>li>span {
+    font-size: 14px;
+    margin-right: 24px;
+    float: left;
+    line-height: 22px;
+}
+
+.musicList>li>span:nth-child(1) {
+    width: 30%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.musicList>li>span:nth-child(2) {
+    width: 20%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.musicList>li>span:nth-child(3) {
+    width: 20%;
+    text-align: right;
+}
+
+.controlBox {
+    float: right;
+    padding: 3px 0;
+}
+
+.controlBox>div {
+    float: right;
+}
+
+.musicStart {
+    background-image: url(../img/musicPlay/start@2x.png);
+    background-size: 100%;
+    width: 16px;
+    height: 16px;
+}
+
+.musicStop {
+    background-image: url(../img/musicPlay/stop@2x.png);
+    background-size: 100%;
+    width: 16px;
+    height: 16px;
+}
+
+/* 底部控制区 */
+.content {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    box-sizing: border-box;
+    padding: 0 5%;
+}
+
+.bottomControlBox {
+    width: 16%;
+    height: 80px;
+    float: left;
+    padding: 24px 0;
+    box-sizing: border-box;
+}
+
+.bottomPlay {
+    background-image: url(../img/musicPlay/start_2@2x.png);
+    background-size: 100%;
+    height: 32px;
+    width: 32px;
+}
+
+.bottomStop {
+    background-image: url(../img/musicPlay/stop_2@2x.png);
+    background-size: 100%;
+    height: 32px;
+    width: 32px;
+}
+
+.progressBox {
+    height: 80px;
+    width: 60%;
+    padding: 30px 0;
+    box-sizing: border-box;
+    position: relative;
+    float: right;
+}
+
+.progressBg {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    position: absolute;
+    top: calc(50% - 2px);
+}
+
+.progress {
+    background-color: #7249F2;
+    width: 0%;
+    height: 4px;
+    border-radius: 10px;
+}
+
+.timeLength {
+    font-size: 12px;
+    width: 24%;
+    float: right;
+    text-align: right;
+    line-height: 80px;
+}
+
+.progressPoint {
+    width: 14px;
+    height: 14px;
+    background-color: #7249F2;
+    position: absolute;
+    left: -3px;
+    bottom: -5px;
+    border-radius: 10px;
+
+}

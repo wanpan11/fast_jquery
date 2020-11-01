@@ -1,0 +1,107 @@
+body {
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix {
+    clear: both;
+}
+
+ul {
+    list-style: none;
+    padding: 0 1%;
+    position: absolute;
+    left: 1%;
+    width: 96%;
+    z-index: -999;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+ul>li {
+    border-bottom: 1px solid #ccc;
+    padding: 12px 1%;
+    display: block;
+}
+
+input {
+    outline: none;
+}
+
+#content-box {
+    background-color: #fff;
+    padding: 20px 24px 12px 24px;
+}
+
+#textContent {
+    width: 80%;
+    height: 80px;
+    float: left;
+    font-size: 18px;
+}
+
+#toSpeak {
+    border: none;
+    font-size: 18px;
+    width: 100%;
+    line-height: 82px;
+    background-color: #0095ff;
+    color: #fff;
+    opacity: 70%;
+}
+
+.speakBox {
+    display: inline-block;
+    width: 18%;
+    margin-left: 8px;
+    padding: 2px 0px;
+}
+
+#content-box div:nth-child(2) {
+    margin-top: 20px;
+}
+
+#seachText {
+    line-height: 32px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    width: 10%;
+}
+
+#tosearch {
+    border: none;
+    line-height: 35px;
+    color: #0095ff;
+    background-color: #fff;
+    opacity: 70%;
+}
+
+#sortTime {
+    float: right;
+    line-height: 37px;
+    font-size: 14px;
+    margin-right: 20%;
+    color: #666;
+}
+
+/* listBox */
+.item span {
+    line-height: 24px;
+}
+
+.tempText {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.tempTime {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.tempDelete {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-left: 24px;
+}

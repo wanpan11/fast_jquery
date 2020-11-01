@@ -1,0 +1,26 @@
+[
+    {
+        "singer": "马也_Crabbit - 冬眠",
+        "musicName": "冬眠（男版）（翻自 司南）",
+        "url": "./public/music/马也_Crabbit - 冬眠（男版）（翻自 司南）.mp3",
+        "time": "04:29"
+    },
+    {
+        "singer": "镜像",
+        "musicName": "红白色乐队",
+        "url": "./public/music/红白色乐队 - 镜像.mp3",
+        "time": "05:09"
+    },
+    {
+        "singer": "段涵",
+        "musicName": "晨曦的光",
+        "url": "./public/music/段涵 - 晨曦的光.mp3",
+        "time": "04:02"
+    },
+    {
+        "singer": "半山",
+        "musicName": "二区六楼",
+        "url": "./public/music/二区六楼 - 半山.mp3",
+        "time": "05:20"
+    }
+]

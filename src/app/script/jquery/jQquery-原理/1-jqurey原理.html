@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 我自己的jquery -->
+    <script src="njquery.js"></script>
+    <!-- 线上 -->
+    <!-- <script src="http://code.jquery.com/jquery-latest.js"></script> -->
+</head>
+
+<body>
+    <li>
+        <div></div>
+        <span></span>
+        <a href=""></a>
+    </li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <div></div>
+    <ul></ul>
+</body>
+<!-- jQuery的本质 -->
+<!-- <script>
+        //JQ的本质就是一个闭包
+        (function (window, undefined) {
+    
+        })(window);
+    
+        //立即执行的函数
+        (function test() {
+            console.log('我执行了')
+        })();
+</script> -->
+<!-- jQuery的实现原理测试 -->
+<script>
+
+    //1.传入 '' false undefined NaN null 0 返回一个空的jQuery对象
+    // console.log($());
+    // console.log($(''));
+    // console.log($(false));
+    // console.log($(undefined));
+    // console.log($(NaN));
+    // console.log($(null));
+    // console.log($(0));
+
+    //2.传字符串
+    //2.1选择器
+    // console.log($('li'));
+    //2.2代码片段
+    // console.log($('  <div><p>你是猪啊</p></div><div><p></p></div>  '));
+
+    //3.传数组
+    //3.1真数组
+    var arr = ['宛攀', '男', '24']
+    // console.log($(arr));
+    //3.2伪数组
+    var likearr = { 0: '宛攀', 1: '男', 2: '24', length: 3 }
+    // console.log($(likearr));
+    //判断真伪数组
+    // console.log({}.toString.apply(arr))
+    // console.log({}.toString.apply(likearr))
+
+    //5.传函数
+    var wanpan = function () {
+        return $('div');
+    }
+    console.log($(wanpan()))
+
+
+</script>
+<!-- 静态方法与实例方法 -->
+<!-- <script>
+
+    function wanpan() {
+
+    };
+
+    wanpan.prototype = {
+        constructor: wanpan,
+        //wanpan的实例方法 wanpan无法直接调用它的的实例方法 需要 wanpan.prototype.key 才能调用
+        init: function () {
+            this.name = '宛攀'
+            this.age = '24'
+            this.sex = '男'
+        },
+        init2: function () {
+            console.log('init2')
+        },
+        init3: function () {
+            console.log(this.age)
+        },
+        init4: function () {
+            console.log(this.sex)
+        }
+    };
+    //wanpan的静态方法 wanpan的实例无法调用它的静态方法
+    wanpan.extend = wanpan.prototype.extend = function (obj) {
+        for (var key in obj) {
+            this[key] = obj[key];
+        };
+    }
+    wanpan.extend({
+        say: function () {
+            console.log('我是静态方法1')
+        },
+        sex: function () {
+            console.log('我是静态方法2')
+        }
+    })
+
+    //wanpan1 是 wanpan的实例可以直接调用它的实例方法
+    var wanpan1 = new wanpan();
+    wanpan.say();
+    wanpan1.init2();
+
+</script> -->
+
+</html>

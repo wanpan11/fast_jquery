@@ -4,7 +4,7 @@ webpack 学习
 
 ## 运行
 ```shell
-debServer: npm run start
+devServer: npm start
 build: npm run build
 ```
 *****

@@ -1,4 +1,5 @@
 const path = require('path')  //path是node.js自带的路径工具
+const webpack = require("webpack")
 const { jsEntry, htmlEntry } = require('./entryFile');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
@@ -6,6 +7,7 @@ module.exports = {
     context: path.resolve(process.cwd(), "src"),
     entry: jsEntry,
     output: {
+        publicPath: "../",//npm start 默认根目录就是dist
         path: path.resolve(process.cwd(), "dist"),
         filename: "js/[name].js"
     },
@@ -44,7 +46,19 @@ module.exports = {
                         }
                     }
                 ]
-            }
+            },
+            {
+                test: /\.mp3$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name]-[hash].[ext]',
+                            outputPath: 'music',
+                        },
+                    },
+                ],
+            },
         ]
     },
     plugins: [
@@ -54,6 +68,11 @@ module.exports = {
             chunkFilename: '[id].css',
         }),
         ...htmlEntry,
+        new webpack.ProvidePlugin({ //引入jquery
+            jQuery: "jquery",
+            $: "jquery"
+
+        })
     ],
     devServer: {
         contentBase: path.join(__dirname, "dist"),
