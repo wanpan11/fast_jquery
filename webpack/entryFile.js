@@ -1,39 +1,15 @@
-const path = require('path')  //path是node.js自带的路径工具
-const fs = require("fs");
+const path = require('path')    //path是node.js自带的路径工具
+const fs = require("fs");       //fs是node.js自带的文件工具
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const jsHomePath = path.resolve(process.cwd(), "src/app/script")
 const htmlHomePath = path.resolve(process.cwd(), "src/app/view")
-const jsFilesName = fs.readdirSync(jsHomePath)
-const htmlFilesName = fs.readdirSync(htmlHomePath)
-
-
-/**
- * 
- * @description 根据传入的文件数组，转换为对象
- * @param {*} arr 文件数组
- * @param {*} type 文件类型
- */
-function fileNameArr2objHandler(arr, type) {
-    let entry = {}
-    for (let i = 0; i < arr.length; i++) {
-        const isFile = arr[i].indexOf('.')
-        if (isFile !== -1) {
-            let key = arr[i].slice(0, arr[i].indexOf('.'))
-            if (type === 'js') {
-                entry[key] = './app/script/' + arr[i]
-            } else {
-                entry[key] = arr[i]
-            }
-            entry[key].toString()
-        }
-    }
-    return entry;
-}
+const jsFilesName = fs.readdirSync(jsHomePath) //获取script 文件夹里的内容
+const htmlFilesName = fs.readdirSync(htmlHomePath) //获取view 文件夹里的内容
 
 /**
  * @cooper
- * @description 根据传入的入口文件名称返回HtmlWebpackPlugin所需配置对象
+ * @description 根据传入的文件名称返回HtmlWebpackPlugin所需配置对象
  * @param {String} | name
  * @returns {Object}
  */
@@ -64,6 +40,31 @@ function createHtmlWebpackPlugin(entries) {
         }
     }
     return pluginArr;
+}
+
+/**
+ * 
+ * @description 根据传入的文件数组，转换为对象{key:val}
+ * @param {*} arr 文件数组
+ * @param {*} type 文件类型
+ */
+function fileNameArr2objHandler(arr, type) {
+    let entry = {}
+    for (let i = 0; i < arr.length; i++) {
+
+        const isFile = arr[i].indexOf('.') 
+
+        if (isFile !== -1) {
+            let key = arr[i].slice(0, arr[i].indexOf('.')) //获取文件名作为键名
+            if (type === 'js') {
+                entry[key] = './app/script/' + arr[i] //拼接路径
+            } else {
+                entry[key] = arr[i]
+            }
+            entry[key].toString()
+        }
+    }
+    return entry;
 }
 
 const jsEntry = fileNameArr2objHandler(jsFilesName, 'js')

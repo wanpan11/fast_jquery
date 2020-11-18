@@ -2,6 +2,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: '微软雅黑';
+    font-size: 12px;
 }
 
 ul,
@@ -9,4 +10,12 @@ ol {
     list-style: none;
     margin: 0;
     padding: 0;
+}
+
+.icon {
+    width: 26px;
+    height: 26px;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
 }
