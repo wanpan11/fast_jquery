@@ -41,7 +41,6 @@ module.exports = {
                 test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
                 use: [
                     {
-<<<<<<< HEAD
                         loader: 'file-loader',
                         options: {
                             //图片大小小于8kb，就会被base64处理
@@ -55,25 +54,16 @@ module.exports = {
                             //打包后的图片的名字[hash:10]:取图片前十位的哈希值，[ext]：保存原先的扩展名
                             name: '[hash:10].[ext]',
                             outputPath: "img"
-=======
-                        loader: "file-loader",
-                        options: {
-                            limit: 64 * 1024,
-                            outputPath: "img",
->>>>>>> e8b5f3a82ac8be8c061effb7558cdf9a93b01a33
                         }
                     }
                 ]
             },
             {
-<<<<<<< HEAD
                 test: /\.html$/,
                 //处理HTML文件的img图片（负责引入img，从而能被url-loader进行处理）
                 loader: 'html-loader'
             },
             {
-=======
->>>>>>> e8b5f3a82ac8be8c061effb7558cdf9a93b01a33
                 test: /\.mp3$/,
                 use: [
                     {
@@ -88,7 +78,6 @@ module.exports = {
         ]
     },
     plugins: [
-<<<<<<< HEAD
         new MiniCssExtractPlugin({   //CSS文件分离
             // 类似 webpackOptions.output里面的配置 可以忽略
             filename: 'css/[name].css',//输出到 dist目录下 的位置 
@@ -96,33 +85,15 @@ module.exports = {
         }),
         ...htmlEntry,   //解构html对象数组
         new webpack.ProvidePlugin({    //引入jquery
-=======
-        new MiniCssExtractPlugin({
-            // 类似 webpackOptions.output里面的配置 可以忽略
-            filename: 'css/[name].css',
-            chunkFilename: '[id].css',
-        }),
-        ...htmlEntry,
-        new webpack.ProvidePlugin({ //引入jquery
->>>>>>> e8b5f3a82ac8be8c061effb7558cdf9a93b01a33
             jQuery: "jquery",
             $: "jquery"
 
         })
     ],
-<<<<<<< HEAD
     devServer: { 
         contentBase: path.join(__dirname, "dist"),
         compress: true,
         port: 9000, //端口
         open: true
     },
-=======
-    devServer: {
-        contentBase: path.join(__dirname, "dist"),
-        compress: true,
-        port: 9000,
-        open: true
-    }
->>>>>>> e8b5f3a82ac8be8c061effb7558cdf9a93b01a33
 }

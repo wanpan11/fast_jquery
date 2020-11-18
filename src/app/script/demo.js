@@ -1,4 +1,5 @@
-import "../style/index.scss"
+import "../../public/initStyle.scss"
+import "../style/demo.scss"
+import $ from 'jquery'
 
-let a = "2";
-console.log(a) 
+$('.container').html('我是 demo.js 呀')
