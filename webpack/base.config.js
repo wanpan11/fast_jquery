@@ -93,7 +93,7 @@ module.exports = {
             chunkFilename: '[id].css',
         }),
         ...htmlEntry,   //解构html对象数组
-        new webpack.ProvidePlugin({    //引入jquery
+        new webpack.ProvidePlugin({    //引入jquery 可直接在项目里使用$ 无需import
             jQuery: "jquery",
             $: "jquery"
         })

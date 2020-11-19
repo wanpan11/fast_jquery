@@ -1,5 +1,5 @@
 import '../../public/initStyle.scss'
-import '../style/index.scss'
+import '../style/demo.scss'
 
 
 var isNext = 0;
@@ -9,7 +9,7 @@ const handlerPromise = () => {
     return new Promise((resolve, reject) => {
         if (isNext > 0) {
             resolve({
-                msg: 'success',
+                msg: '我是demoJS',
                 data: isNext
             })
         } else {
