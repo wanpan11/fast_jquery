@@ -1,3 +1,7 @@
+import '../../public/initStyle.scss'
+import '../style/index.scss'
+
+
 var isNext = 0;
 var root = document.getElementById('root')
 
