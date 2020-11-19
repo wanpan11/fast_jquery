@@ -41,16 +41,22 @@ body {
         margin: 0 auto;
         margin-bottom: 1em;
 
-        span {
+        a {
             font-size: 20px;
+            color: $theme-color1;
+            text-align: left;
+            line-height: 32px;
+            text-decoration: none;
+            font-weight: bold;
+            float: left;
+            width: 96%;
         }
 
-        ul {
-            margin: 2em 1em;
-
-            li {
-                font-size: 16px;
-            }
+        svg {
+            width: 4%;
+            height: 32px;
+            float: right;
+            color: $font-color-10;
         }
     }
 }

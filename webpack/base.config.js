@@ -1,6 +1,6 @@
 const path = require('path')  //path是node.js自带的路径工具
 const webpack = require("webpack")
-const { jsEntry, htmlEntry } = require('./entryFile'); //加载js入口文件 与html
+const { jsEntry, htmlEntry } = require('./entryFile');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
@@ -13,6 +13,15 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.js$/,
+                exclude: /[\\/]node_modules[\\/]/,
+                loader: 'babel-loader',
+            },
+            {
+                test: /\.jsx?$/,
+                loader: 'babel-loader'
+            },
             {
                 test: /\.css$/,
                 use: [
@@ -87,13 +96,15 @@ module.exports = {
         new webpack.ProvidePlugin({    //引入jquery
             jQuery: "jquery",
             $: "jquery"
-
         })
     ],
-    devServer: { 
+    devServer: {
         contentBase: path.join(__dirname, "dist"),
         compress: true,
-        port: 9000, //端口
+        port: 9000,
         open: true
+    },
+    resolve: {
+        extensions: [".js", ".jsx", ".json"]
     },
 }
